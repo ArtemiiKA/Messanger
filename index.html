@@ -1,0 +1,82 @@
+<?php
+
+// Открыть текстовый файл
+$f = fopen("ChatHistory.txt", "w");
+
+// Записать строку текста
+fwrite($f, "PHP is fun!"); 
+
+// Закрыть текстовый файл
+fclose($f);
+
+// Открыть файл для чтения и прочитать строку
+$f = fopen("textfile.txt", "r");
+echo fgets($f); 
+
+fclose($f);
+
+?>
+
+
+<meta http-equiv="refresh" content="10">
+
+<style>
+.Input {
+  margin: 50px auto;
+  width: 1200px;
+  height: 30px;
+  position: absolute;
+  top: 575px; left: 0px;
+}
+.Button {
+  margin: 50px auto;
+  position: absolute;
+  top: 575px; left: 1200px;
+  width: 120px;
+  height: 30px;
+}
+
+  
+.Chat {
+background-color: white;
+
+}
+
+
+
+
+
+</style>
+
+
+<input class="Button" type="button" value="Enter" onclick="get()">
+
+<form name="chat">
+  <input class="Input" name="input" value="">
+  
+ 
+</form>
+
+<script>
+  function get(){
+  // получаем форму
+  let form = document.forms.chat; // <form name="my"> element
+
+  // получаем элемент
+  let elem = form.elements.input; // <input name="one"> element
+
+  alert (elem.value); // 1
+  }
+  
+  
+</script>
+
+
+
+
+
+
+
+<iframe class="Chat" src="ChatHistory.txt" width=1200 height=575 frameborder=0 id="frame">
+
+
